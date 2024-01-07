@@ -1,0 +1,36 @@
+[project]
+name = "blogs"
+version = "0.1.0"
+description = "iasukas blog"
+authors = [
+    { name = "iasukas", email = "nineboo@icloud.com" },
+]
+dependencies = [
+    "sanic>=23.12.0",
+    "sanic-ext>=23.12.0",
+    "sqlalchemy>=2.0.23",
+    "asyncpg>=0.29.0",
+    "celery>=5.3.6",
+    "redis>=5.0.1",
+    "passlib>=1.7.4",
+    "aiosmtplib>=3.0.1",
+    "alembic>=1.13.1",
+    "orjson>=3.9.10",
+    "setuptools>=69.0.3",
+    "wheel>=0.42.0",
+    "sanic-security>=1.11.7",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = { text = "Mozilla Public License Version 2.0" }
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+package-type = "library"
+
+[tool.pdm.scripts]
+format = { cmd = "ruff check . --fix" }
